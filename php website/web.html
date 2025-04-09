@@ -1,0 +1,278 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Side Menu with Practical Files
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+    button{
+        border: 3px solid rgb(139, 196, 210);
+        color: rgb(255, 255, 255);
+        background-color: rgb(239, 239, 127);
+    }
+  </style>
+ </head>
+ <body class="bg-gray-100 flex">
+  <!-- Side Menu -->
+  <div class="w-64 bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-md h-screen">
+   <div class="p-4 border-b border-blue-400">
+    <h1 class="text-xl font-bold">
+     Menu
+    </h1>
+   </div>
+   <ul class="mt-4">
+    <li class="p-4 border-b border-blue-400 hover:bg-blue-600 cursor-pointer">
+     <a href="javascript:void(0)" onclick="openFile('file1')">
+      Practical File 1
+     </a>
+    </li>
+    <li class="p-4 border-b border-blue-400 hover:bg-blue-600 cursor-pointer">
+     <a href="javascript:void(0)" onclick="openFile('file2')">
+      Practical File 2
+     </a>
+    </li>
+    <li class="p-4 border-b border-blue-400 hover:bg-blue-600 cursor-pointer">
+     <a href="javascript:void(0)" onclick="openFile('file3')">
+      Practical File 3
+     </a>
+    </li>
+    <li class="p-4 border-b border-blue-400 hover:bg-blue-600 cursor-pointer">
+     <a href="javascript:void(0)" onclick="openFile('file4')">
+      Practical File 4
+     </a>
+    </li>
+    <li class="p-4 border-b border-blue-400 hover:bg-blue-600 cursor-pointer">
+     <a href="javascript:void(0)" onclick="openFile('file5')">
+      Practical File 5
+     </a>
+    </li>
+   </ul>
+  </div>
+  <!-- Main Content -->
+
+  <!-- practical 1 -->
+  <div class="flex-1 p-6 bg-gradient-to-b from-gray-200 to-gray-400">
+   <div class="hidden bg-white p-6 rounded-lg shadow-md" id="file1">
+    <h2 class="text-2xl font-bold mb-4">
+     Practical File 1
+    </h2>
+    <pre class="bg-gray-100 p-4 rounded-lg overflow-auto">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Simple Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form method="post" action=""&gt;
+        &lt;label for="name"&gt;Enter Your Name:&lt;/label&gt;
+        &lt;input type="text" name="name" id="name" required&gt;
+        &lt;input type="submit" name="submit" value="Submit"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = htmlspecialchars($_POST['name']);
+        echo "&lt;h2&gt;Your Name is: $name&lt;/h2&gt;";
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </br>
+            <button><a href="practical1.php">output</a></button>
+   </div>
+
+
+   <!-- practical 2 -->
+   <div class="hidden bg-white p-6 rounded-lg shadow-md" id="file2">
+    <h2 class="text-2xl font-bold mb-4">
+     Practical File 2
+    </h2>
+    <pre class="bg-gray-100 p-4 rounded-lg overflow-auto">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Even or Odd Checker&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Check Whether a Number is Even or Odd&lt;/h2&gt;
+    &lt;form method="post" action=""&gt;
+        &lt;label for="number"&gt;Enter a Number:&lt;/label&gt;
+        &lt;input type="number" name="number" id="number" required&gt;
+        &lt;input type="submit" name="submit" value="Check"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $num = $_POST['number'];
+
+        if ($num % 2 == 0) {
+            echo "&lt;h3&gt;The number $num is Even.&lt;/h3&gt;";
+        } else {
+            echo "&lt;h3&gt;The number $num is Odd.&lt;/h3&gt;";
+        }
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </br>
+            <button><a href="practical2.php">output</a></button>
+   </div>
+
+
+   <!-- practical 3 -->
+   <div class="hidden bg-white p-6 rounded-lg shadow-md" id="file3">
+    <h2 class="text-2xl font-bold mb-4">
+     Practical File 3
+    </h2>
+    <pre class="bg-gray-100 p-4 rounded-lg overflow-auto">
+&lt;?php
+// PHP script to find the largest among three numbers using user input
+
+// Taking user input from the form
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num1 = $_POST["num1"];
+    $num2 = $_POST["num2"];
+    $num3 = $_POST["num3"];
+
+    // Checking the largest number
+    if ($num1 &gt;= $num2 &amp;&amp; $num1 &gt;= $num3) {
+        $largest = $num1;
+    } elseif ($num2 &gt;= $num1 &amp;&amp; $num2 &gt;= $num3) {
+        $largest = $num2;
+    } else {
+        $largest = $num3;
+    }
+
+    echo "&lt;h3&lt;The largest number is:&lt;/h3&lt; " . $largest;
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Find Largest Number&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Enter Three Numbers&lt;/h2&gt;
+    &lt;form method="post"&gt;
+        Number 1: &lt;input type="number" name="num1" required&gt;&lt;br&gt;&lt;br&gt;
+        Number 2: &lt;input type="number" name="num2" required&gt;&lt;br&gt;&lt;br&gt;
+        Number 3: &lt;input type="number" name="num3" required&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Find Largest"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </br>
+            <button><a href="practical3.php">output</a></button>
+   </div>
+
+   <!-- practical 4 -->
+   <div class="hidden bg-white p-6 rounded-lg shadow-md" id="file4">
+    <h2 class="text-2xl font-bold mb-4">
+     Practical File 4
+    </h2>
+    <pre class="bg-gray-100 p-4 rounded-lg overflow-auto">
+&lt;?php
+function calculator($num1, $num2, $choice) {
+    switch ($choice) {
+        case 1:
+            return $num1 + $num2;
+        case 2:
+            return $num1 - $num2;
+        case 3:
+            return $num1 * $num2;
+        case 4:
+            return ($num2 != 0) ? $num1 / $num2 : "Division by zero is not allowed";
+        default:
+            return "Invalid choice. Please select a valid operation.";
+    }
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num1 = (float)$_POST['num1'];
+    $num2 = (float)$_POST['num2'];
+    $choice = (int)$_POST['operation'];
+
+    $result = calculator($num1, $num2, $choice);
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Simple Calculator&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Simple Calculator&lt;/h2&gt;
+    &lt;form method="post" action=""&gt;
+        &lt;label for="num1"&gt;Enter First Number:&lt;/label&gt;
+        &lt;input type="text" id="num1" name="num1" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for="num2"&gt;Enter Second Number:&lt;/label&gt;
+        &lt;input type="text" id="num2" name="num2" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;Select Operation:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="radio" name="operation" value="1" required&gt; Addition (+)&lt;br&gt;
+        &lt;input type="radio" name="operation" value="2"&gt; Subtraction (-)&lt;br&gt;
+        &lt;input type="radio" name="operation" value="3"&gt; Multiplication (*)&lt;br&gt;
+        &lt;input type="radio" name="operation" value="4"&gt; Division (/)&lt;br&gt;&lt;br&gt;
+
+        &lt;input type="submit" value="Calculate"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if (isset($result)) {
+        echo "&lt;h3&gt;Result: $result&lt;/h3&gt;";
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </br>
+            <button><a href="practical4.php">output</a></button>
+   </div>
+
+   <!-- practical 5 -->
+   <div class="hidden bg-white p-6 rounded-lg shadow-md" id="file5">
+    <h2 class="text-2xl font-bold mb-4">
+     Practical File 5
+    </h2>
+    <pre class="bg-gray-100 p-4 rounded-lg overflow-auto">
+&lt;?php
+// Define the array
+$COLOR = array(4 =&gt; 'WHITE', 6 =&gt; 'GREEN', 11 =&gt; 'RED');
+
+// Get the first element
+$firstElement = reset($COLOR);
+
+// Display the first element
+echo "The first element of the array is: " . $firstElement;
+?&gt;
+            </pre>
+        </br>
+            <button><a href="practical5.php">output</a></button>
+   </div>
+  </div>
+  <script>
+   function openFile(fileId) {
+            // Hide all files
+            document.querySelectorAll('[id^="file"]').forEach(file => file.classList.add('hidden'));
+            // Show the selected file
+            document.getElementById(fileId).classList.remove('hidden');
+        }
+  </script>
+ </body>
+</html>
